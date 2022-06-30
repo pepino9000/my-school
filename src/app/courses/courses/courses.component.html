@@ -1,0 +1,15 @@
+<h2 class="text-center mt-5">
+  Lista de cursos
+</h2>
+<div class="row">
+  <div *ngFor="let grade of grades; index as i" class="col-4 my-4 ">
+    <mat-card>
+      <mat-card-title>Curso <mat-icon>school</mat-icon>
+      </mat-card-title>
+      <mat-card-title>{{grade.year}} {{grade.letter}}</mat-card-title>
+      <mat-card-actions>
+        <button mat-button>VER</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

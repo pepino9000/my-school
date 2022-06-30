@@ -1,0 +1,56 @@
+<div class="user-form-container">
+  <form [formGroup]="form" (ngSubmit)="create($event)">
+    <mat-card class="form-card">
+      <mat-card-header class="form-header">
+        <mat-card-title>Agregar Estudiante</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="nombre" formControlName="name" matInput type="name">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="segundo nombre" formControlName="secondName" matInput type="secondName">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="apellido" formControlName="lastName" matInput type="lastName">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="segundo apellido" formControlName="secondLastName" matInput type="secondLastName">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="correo" formControlName="email" matInput type="email">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="rut" formControlName="rut" matInput type="rut">
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions class="form-button">
+        <p *ngIf="this.response" class="text-success">Usuario creado correctamente</p>
+        <button [disabled]="!this.form.valid" mat-raised-button type="submit">Ingresar</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>

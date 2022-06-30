@@ -1,0 +1,33 @@
+.drawer_menu{
+  padding: 20px;
+  text-align-last: center;
+  // background:linear-gradient(83deg, #2dbdfd 0%, #226bc3 100%);
+}
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+.navbar{
+  background:linear-gradient(114deg, #226bc3 0%, #2dbdfd 100%);
+}
+.white-icon {
+    color: white;
+}
+.logout-button{
+  width: auto;
+}
+.white-icon svg {
+    fill: white;
+}
+.drawer-content{
+  padding: 40px;
+}
+mat-card {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}

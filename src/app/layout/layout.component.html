@@ -1,0 +1,42 @@
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+  <mat-drawer #drawer mode="side" class="drawer_menu">
+    <div class="example-button-container">
+      <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" routerLink="/home">
+        <mat-icon>home</mat-icon>
+      </button>
+    </div>
+    <button mat-button routerLink="/home">Inicio</button>
+    <div class="example-button-container">
+      <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+        <mat-icon>school</mat-icon>
+      </button>
+    </div>
+    <button mat-button [matMenuTriggerFor]="cursos">Cursos</button>
+    <mat-menu #cursos="matMenu">
+      <button mat-menu-item routerLink="/courses">Ver cursos</button>
+    </mat-menu>
+    <div class="example-button-container">
+      <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+        <mat-icon>face</mat-icon>
+      </button>
+    </div>
+    <button mat-button [matMenuTriggerFor]="alumnos">Alumnos</button>
+    <mat-menu #alumnos="matMenu">
+      <button mat-menu-item routerLink="/admin/create-user">Agregar Alumnos</button>
+    </mat-menu>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar class="navbar">
+      <button (click)="drawer.toggle()" mat-icon-button class="white-icon"
+        aria-label="Example icon button with a menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <button (click)="logout()" mat-icon-button class="white-icon logout-button"
+        aria-label="Example icon button with a menu icon">
+        Cerrar Sesión
+        <mat-icon>eject</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

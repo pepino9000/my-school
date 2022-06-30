@@ -1,0 +1,29 @@
+.example-card {
+  padding: 20px;
+}
+
+.example-header-image {
+  background-image: url('../../../assets/images/kid-avatar.JPG');
+  background-size: cover;
+  background-position: center;
+}
+
+.student-card{
+    border-radius: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+mat-card-header{
+      justify-content: center;
+}
+
+mat-card-actions{
+      text-align: center;
+}
+
+.title{
+  color: #226bc3
+}

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "my-school-unab"
+  },
+  "targets": {
+    "my-school-unab": {
+      "hosting": {
+        "my-school": [
+          "my-school-unab"
+        ]
+      }
+    }
+  }
+}

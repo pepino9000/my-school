@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-form-container{
+  height: 100%;
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  background: rgb(34,107,195);
+  background: linear-gradient(90deg, #226bc3 0%, #2dbdfd 100%);
+}
+
+.form-card{
+  min-width: 250px;
+  width: 265px;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom:40px;
+  border-radius: 40px;
+}
+
+.form-header{
+  margin-bottom: 40px;
+  display: block;
+}
+
+.form-button{
+    margin-top: 40px;
+}
