@@ -4,6 +4,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { MaterialModule } from '../material/material.module';
 import { CoursesRoutingModule } from './courses.routing-module';
 import { SeeCoursesComponent } from './see-courses/see-courses.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { SeeCoursesComponent } from './see-courses/see-courses.component';
   imports: [
     CommonModule,
     MaterialModule,
-    CoursesRoutingModule
+    CoursesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class CoursesModule {}

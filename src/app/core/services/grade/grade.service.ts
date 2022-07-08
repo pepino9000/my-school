@@ -14,8 +14,10 @@ export class GradeService {
   ) {
   }
 
-  getGrades() {
-    return this.http.get<Grades[]>(`${environment.url_api}/api/v1/grade`);
+  getGrades(id: number) {
+    return this.http.get<Grades[]>(`${environment.url_api}/api/v1/grade/myGrade/${id}`);
   }
-
+  getGradeByList(id: number) {
+    return this.http.get<Grades>(`${environment.url_api}/api/v1/list/listWithGrade/${id}`);
+  }
 }

@@ -1,3 +1,9 @@
+<div class="back-button example-button-container">
+  <button mat-raised-button color="primary" routerLink="/home">
+    <mat-icon>arrow_back_ios</mat-icon>
+    Volver
+  </button>
+</div>
 <h2 class="text-center mt-5">
   Lista de cursos
 </h2>
@@ -8,7 +14,7 @@
       </mat-card-title>
       <mat-card-title>{{grade.year}} {{grade.letter}}</mat-card-title>
       <mat-card-actions>
-        <button mat-button>VER</button>
+        <button (click)="more(grade.listId)" mat-button>VER</button>
       </mat-card-actions>
     </mat-card>
   </div>

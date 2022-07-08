@@ -1,14 +1,15 @@
 <div class="user-form-container">
-<div class="back-button example-button-container">
-  <button mat-raised-button color="primary" routerLink="/home">
-    <mat-icon>arrow_back_ios</mat-icon>
-    Volver
-  </button>
-</div>
-  <form [formGroup]="form" (ngSubmit)="create($event)">
+  <div class="back-button example-button-container">
+    <button mat-raised-button color="primary" mat-button mat-dialog-close>
+      <mat-icon>arrow_back_ios</mat-icon>
+      Cerrar
+    </button>
+  </div>
+  <br>
+  <form [formGroup]="form" (ngSubmit)="save($event)">
     <mat-card class="form-card">
       <mat-card-header class="form-header">
-        <mat-card-title>Agregar Estudiante</mat-card-title>
+        <mat-card-title>Editar Estudiante</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <div class="row">

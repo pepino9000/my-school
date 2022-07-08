@@ -8,11 +8,7 @@
   margin-top: 20px;
 }
 .user-form-container{
-  height: 100%;
   width: 100%;
-  min-height: calc(100vh - 64px);
-  background: rgb(34,107,195);
-  background: linear-gradient(90deg, #226bc3 0%, #2dbdfd 100%);
 }
 
 .form-card{
@@ -32,4 +28,14 @@
 
 .form-button{
     margin-top: 40px;
+}
+
+.mat-dialog-container{
+  background: linear-gradient(90deg, #226bc3 0%, #2dbdfd 100%);
+}
+
+::ng-deep .my-custom-dialog-class {
+  mat-dialog-container {
+    background: linear-gradient(90deg, #226bc3 0%, #2dbdfd 100%);
+  }
 }

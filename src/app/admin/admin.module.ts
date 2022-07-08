@@ -4,12 +4,14 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { AdminRoutingModule } from './admin.routing-module';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 
 
 @NgModule({
   declarations: [
-    CreateUserComponent
+    CreateUserComponent,
+    EditUserComponent
   ],
   imports: [
     CommonModule,
