@@ -32,6 +32,9 @@ export class StudentService {
   getStudentsByList(id: number | string) {
     return this.http.get<Student[]>(`${environment.url_api}/api/v1/list/StudentByList/${id}`);
   }
+  createUser(data: Student) {
+    return this.http.post<Student>(`${environment.url_api}/api/v1/users`, data);
+  }
   createStudent(data: Student) {
     return this.http.post<Student>(`${environment.url_api}/api/v1/users/student`, data);
   }

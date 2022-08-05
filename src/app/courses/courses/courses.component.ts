@@ -5,11 +5,13 @@ import { GradeService } from 'src/app/core/services/grade/grade.service';
 export interface Grades {
   id: number,
   letter: string,
-  courseId: number,
   teacherId: number,
-  listId: number,
+  listId?: number,
+  list_id?: number,
   createdAt: string;
   year: string;
+  name: string;
+  lastName: string;
 }
 
 @Component({

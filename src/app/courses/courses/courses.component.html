@@ -13,8 +13,11 @@
       <mat-card-title>Curso <mat-icon>school</mat-icon>
       </mat-card-title>
       <mat-card-title>{{grade.year}} {{grade.letter}}</mat-card-title>
+            <mat-card-content>
+              Docente: {{grade.name + ' ' +grade.lastName}}
+            </mat-card-content>
       <mat-card-actions>
-        <button (click)="more(grade.listId)" mat-button>VER</button>
+        <button (click)="more(grade.listId!)" mat-button>VER</button>
       </mat-card-actions>
     </mat-card>
   </div>

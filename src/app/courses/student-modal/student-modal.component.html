@@ -1,0 +1,30 @@
+<div class="user-form-container">
+  <div class="back-button example-button-container">
+    <button mat-raised-button color="primary" mat-button mat-dialog-close>
+      <mat-icon>arrow_back_ios</mat-icon>
+      Cerrar
+    </button>
+  </div>
+  <br>
+  <mat-card class="example-card" *ngIf="this.student">
+    <mat-card-header>
+      <mat-card-title>
+        {{
+        this.student.name + ' '
+        + this.student.secondName + ' '
+        + this.student.lastName + ' ' +
+        this.student.secondLastName
+        }}
+      </mat-card-title>
+      <mat-card-subtitle>Estudiante</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+      <p>
+        <b>Email:</b> {{this.student.email}}
+      </p>
+      <p>
+        <b>Rut:</b> {{this.student.rut}}
+      </p>
+    </mat-card-content>
+  </mat-card>

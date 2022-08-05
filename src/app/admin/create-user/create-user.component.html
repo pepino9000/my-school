@@ -8,7 +8,7 @@
   <form [formGroup]="form" (ngSubmit)="create($event)">
     <mat-card class="form-card">
       <mat-card-header class="form-header">
-        <mat-card-title>Agregar Estudiante</mat-card-title>
+        <mat-card-title>Agregar Usuario</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <div class="row">
@@ -46,9 +46,27 @@
             </mat-form-field>
           </div>
         </div>
+        <mat-form-field>
+          <mat-label>rol</mat-label>
+          <select matNativeControl formControlName="role">
+            <option value="" selected>Seleccione el rol</option>
+            <option value=1>Admin</option>
+            <option value=2>Teacher</option>
+            <option value=3>Utp</option>
+            <option value=4>Apoderado</option>
+            <option value=5>Estudiante</option>
+          </select>
+        </mat-form-field>
+        <mat-form-field class="row" *ngIf="this.form.get('role')?.value === '5'">
+          <mat-label>Curso (opcional)</mat-label>
+          <select matNativeControl formControlName="grade">
+            <option value="" selected>Seleccione el curso</option>
+            <option value={{grade.id}} *ngFor="let grade of grades; index as i">{{grade.year + ' ' + grade.letter}}</option>
+          </select>
+        </mat-form-field>
         <div class="row">
-          <div class="col-xs">
-            <mat-form-field>
+            <div class="col-xs">
+              <mat-form-field>
               <input placeholder="rut" formControlName="rut" matInput type="rut">
             </mat-form-field>
           </div>

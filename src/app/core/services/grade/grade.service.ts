@@ -17,7 +17,16 @@ export class GradeService {
   getGrades(id: number) {
     return this.http.get<Grades[]>(`${environment.url_api}/api/v1/grade/myGrade/${id}`);
   }
+  getAllGrades() {
+    return this.http.get<Grades[]>(`${environment.url_api}/api/v1/grade`);
+  }
   getGradeByList(id: number) {
     return this.http.get<Grades>(`${environment.url_api}/api/v1/list/listWithGrade/${id}`);
+  }
+  getGradeByStudent(id: number) {
+    return this.http.get<Grades>(`${environment.url_api}/api/v1/grade/gradeByStudent/${id}`);
+  }
+  patchGrade(id: number, data: Grades) {
+    return this.http.patch<Grades>(`${environment.url_api}/api/v1/grade/${id}`, data);
   }
 }

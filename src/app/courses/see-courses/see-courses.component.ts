@@ -5,6 +5,7 @@ import { EditUserComponent } from 'src/app/admin/edit-user/edit-user.component';
 import { GradeService } from 'src/app/core/services/grade/grade.service';
 import { Student, StudentService } from 'src/app/core/services/students/students.service';
 import { Grades } from '../courses/courses.component';
+import { StudentModalComponent } from '../student-modal/student-modal.component';
 
 @Component({
   selector: 'app-see-courses',
@@ -12,7 +13,7 @@ import { Grades } from '../courses/courses.component';
   styleUrls: ['./see-courses.component.scss']
 })
 export class SeeCoursesComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'rut', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'rut', 'email', 'actions'];
 
   roleParams: Params = {};
   students: Student[] = [];
@@ -45,6 +46,15 @@ export class SeeCoursesComponent implements OnInit {
   }
   openDialog(id: number): void {
     let dialogRef = this.dialog.open(EditUserComponent, {
+      width: '313px',
+      panelClass: 'my-custom-dialog-class',
+      data: {
+        id: id
+      }
+    });
+  }
+  openStudent(id: number): void {
+    let dialogRef = this.dialog.open(StudentModalComponent, {
       width: '313px',
       panelClass: 'my-custom-dialog-class',
       data: {

@@ -5,13 +5,15 @@ import { MaterialModule } from '../material/material.module';
 import { CoursesRoutingModule } from './courses.routing-module';
 import { SeeCoursesComponent } from './see-courses/see-courses.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StudentModalComponent } from './student-modal/student-modal.component';
 
 
 
 @NgModule({
   declarations: [
     CoursesComponent,
-    SeeCoursesComponent
+    SeeCoursesComponent,
+    StudentModalComponent
   ],
   imports: [
     CommonModule,

@@ -1,13 +1,8 @@
 <div class="back-button example-button-container">
-  <button mat-raised-button color="primary" routerLink="/courses">
+  <button mat-raised-button color="primary" routerLink="/home">
     <mat-icon>arrow_back_ios</mat-icon>
     Volver
   </button>
-</div>
-<div *ngIf="this.grade">
-  <h2 class="text-center title">
-    Alumnos del {{this.grade.year}}° {{this.grade.letter}}
-  </h2>
 </div>
 <table mat-table [dataSource]="this.students" class="mat-elevation-z8 mt-5">
   <!--- Note that these columns can be defined in any order.
@@ -18,20 +13,20 @@
   </ng-container>
   <!-- Position Column -->
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
     <td mat-cell *matCellDef="let student"> {{student.name}} {{student.secondName}} {{student.lastName}}
       {{student.secondLastName}} </td>
   </ng-container>
   <ng-container matColumnDef="rut">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <th mat-header-cell *matHeaderCellDef> Rut </th>
     <td mat-cell *matCellDef="let student"> {{student.rut}} </td>
   </ng-container>
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let student"> {{student.email}} </td>
-    </ng-container>
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Correo </th>
+    <td mat-cell *matCellDef="let student"> {{student.email}} </td>
+  </ng-container>
   <ng-container matColumnDef="actions">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
     <td mat-cell *matCellDef="let student">
       <button class="title" (click)="openStudent(student.id)" mat-button>Ver</button>
       <button class="title" (click)="openDialog(student.id)" mat-button>Editar</button>

@@ -54,9 +54,21 @@
             </mat-form-field>
           </div>
         </div>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <mat-label>Curso (opcional)</mat-label>
+              <select matNativeControl formControlName="grade">
+                <option value="" selected>Seleccione el curso</option>
+                <option value={{grade.id}} *ngFor="let grade of grades; index as i">{{grade.year + ' ' + grade.letter}}
+                </option>
+              </select>
+            </mat-form-field>
+          </div>
+        </div>
       </mat-card-content>
       <mat-card-actions class="form-button">
-        <p *ngIf="this.response" class="text-success">Usuario creado correctamente</p>
+        <p *ngIf="this.response" class="text-success">Usuario editado correctamente</p>
         <button [disabled]="!this.form.valid" mat-raised-button type="submit">Ingresar</button>
       </mat-card-actions>
     </mat-card>
