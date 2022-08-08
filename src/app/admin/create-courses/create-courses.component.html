@@ -1,0 +1,79 @@
+<div class="user-form-container">
+  <div class="back-button example-button-container">
+    <button mat-raised-button color="primary" routerLink="/home">
+      <mat-icon>arrow_back_ios</mat-icon>
+      Volver
+    </button>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="create($event)">
+    <mat-card class="form-card">
+      <mat-card-header class="form-header">
+        <mat-card-title>Agregar Curso</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <mat-label>año</mat-label>
+              <select matNativeControl formControlName="year">
+                <option value="" selected>Seleccione el año</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+              </select>
+            </mat-form-field>
+          </div>
+        </div>
+        <span class="text-danger" *ngIf="this.courseExist">
+          Ya existe el curso
+        </span>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <mat-label>letra</mat-label>
+              <select matNativeControl formControlName="letter">
+                <option value="" selected>Seleccione la letra</option>
+                <option value=A>A</option>
+                <option value=B>B</option>
+                <option value=C>C</option>
+                <option value=D>D</option>
+                <option value=E>E</option>
+                <option value=F>F</option>
+              </select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <mat-label>lista</mat-label>
+              <select matNativeControl formControlName="listId">
+                <option value="" selected>Seleccione la lista</option>
+                <option value={{list.id}} *ngFor="let list of lists; index as i">{{list.id}}</option>
+              </select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <mat-label>profesor jefe</mat-label>
+              <select matNativeControl formControlName="teacherId">
+                <option value="" selected>Seleccione la lista</option>
+                <option value={{teacher.id}} *ngFor="let teacher of teachers; index as i">{{teacher.id}}</option>
+              </select>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions class="form-button">
+        <p *ngIf="this.response" class="text-success">Usuario creado correctamente</p>
+        <button [disabled]="!this.form.valid" mat-raised-button type="submit">Ingresar</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>

@@ -6,6 +6,7 @@ import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { AllStudentsComponent } from './all-students/all-students.component';
+import { CreateCoursesComponent } from './create-courses/create-courses.component';
 
 
 
@@ -13,7 +14,8 @@ import { AllStudentsComponent } from './all-students/all-students.component';
   declarations: [
     CreateUserComponent,
     EditUserComponent,
-    AllStudentsComponent
+    AllStudentsComponent,
+    CreateCoursesComponent
   ],
   imports: [
     CommonModule,

@@ -26,6 +26,9 @@ export class StudentService {
   getStudents() {
     return this.http.get<Student[]>(`${environment.url_api}/api/v1/users/student`);
   }
+  getTeachers() {
+    return this.http.get<Student[]>(`${environment.url_api}/api/v1/usersByRole/teacher`);
+  }
   getStudent(id: number) {
     return this.http.get<Student>(`${environment.url_api}/api/v1/users/student/${id}`);
   }

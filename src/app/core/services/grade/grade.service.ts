@@ -29,4 +29,7 @@ export class GradeService {
   patchGrade(id: number, data: Grades) {
     return this.http.patch<Grades>(`${environment.url_api}/api/v1/grade/${id}`, data);
   }
+  createGrade(data: Grades) {
+    return this.http.post<Grades>(`${environment.url_api}/api/v1/grade`, data);
+  }
 }

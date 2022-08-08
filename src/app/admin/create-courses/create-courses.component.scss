@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.back-button{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.user-form-container{
+  height: 100%;
+  width: 100%;
+  min-height: calc(50vh - 64px);
+  padding: 0px;
+}
+
+.form-card{
+  min-width: 250px;
+  width: 265px;
+  margin: 20px auto;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom:40px;
+  border-radius: 40px;
+}
+
+.form-header{
+  margin-bottom: 40px;
+  display: block;
+}
+
+.form-button{
+    margin-top: 40px;
+}
+
+::ng-deep .my-custom-dialog-class {
+  mat-dialog-container {
+    background: linear-gradient(90deg, #226bc3 0%, #2dbdfd 100%);
+  }
+}

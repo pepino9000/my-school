@@ -18,6 +18,12 @@ export class ListService {
     private http: HttpClient
   ) {
   }
+  getAllList() {
+    return this.http.get<List[]>(`${environment.url_api}/api/v1/list`,);
+  }
+  createList() {
+    return this.http.post<List>(`${environment.url_api}/api/v1/list`, {});
+  }
   AddStudentToList(data: List) {
     return this.http.post<List>(`${environment.url_api}/api/v1/users/listStudent`, data);
   }

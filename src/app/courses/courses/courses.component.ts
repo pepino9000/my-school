@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { CreateCoursesComponent } from 'src/app/admin/create-courses/create-courses.component';
 import { GradeService } from 'src/app/core/services/grade/grade.service';
+import { StudentModalComponent } from '../student-modal/student-modal.component';
 
 export interface Grades {
   id: number,
@@ -23,7 +26,12 @@ export class CoursesComponent implements OnInit {
 
   roleParams: Params = {};
   grades: Grades[] = [];
-  constructor (private activatedRoute: ActivatedRoute, private gradeService: GradeService, private router: Router) {}
+  constructor (
+    private activatedRoute: ActivatedRoute,
+    private gradeService: GradeService,
+    private router: Router,
+    public dialog: MatDialog,
+  ) {}
 
   async ngOnInit(): Promise<void> {
     const userData = window.localStorage.getItem('user');
@@ -44,4 +52,11 @@ export class CoursesComponent implements OnInit {
   async more(id: number) {
     this.router.navigate([`/courses/students/${id}`]);
   }
+
+  openDialog(): void {
+    let dialogRef = this.dialog.open(CreateCoursesComponent, {
+      width: '313px',
+      panelClass: 'my-custom-dialog-class',
+    });
+  };
 }
