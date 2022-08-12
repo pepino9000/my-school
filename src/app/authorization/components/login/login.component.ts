@@ -16,8 +16,9 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private authService: AuthService
-  ) {
-    this.buildForm();
+    ) {
+      this.buildForm();
+      this.form.setErrors({ unauthenticated: false });
   }
 
   ngOnInit(): void {
@@ -31,7 +32,8 @@ export class LoginComponent implements OnInit {
         .subscribe(auth => {
           this.account = auth;
           this.redirect();
-        });
+        },
+        (error) => this.form.setErrors({ unauthenticated: true }));
     }
   }
 

@@ -30,6 +30,10 @@
                         *ngIf="password?.errors?.['required'] && this.form.get('password')?.touched">
                         Debe ingresar una contraseña
                     </div>
+                    <div class="text-danger error-text center"
+                        *ngIf="form.errors?.['unauthenticated']">
+                        Correo electrónico o contraseña incorrecta
+                    </div>
                 </div>
             </mat-card-content>
             <mat-card-actions class="form-button">
