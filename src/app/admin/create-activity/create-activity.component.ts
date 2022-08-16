@@ -16,11 +16,11 @@ export class CreateActivityComponent implements OnInit {
   account: any = [];
   teachers: any = [];
   lists: List[] = [];
-  data: Student | undefined;
   response: boolean = false;
   grades!: Grades[];
   courseExist: boolean = false;
   questionTypes: QuestionType[] =[];
+
   constructor (
     private formBuilder: FormBuilder,
     private questionService: QuestionTypeService,
@@ -60,5 +60,4 @@ export class CreateActivityComponent implements OnInit {
         this.grades = grade;
       });
   }
-
 }

@@ -35,9 +35,11 @@
             </mat-form-field>
           </div>
         </div>
-        <span class="text-danger" *ngIf="this.courseExist">
-          Ya existe el curso
-        </span>
+        <div class="example-button-container">
+          <button mat-raised-button color="primary">
+          Agregar pregunta +
+          </button>
+        </div>
       </mat-card-content>
       <mat-card-actions class="form-button">
         <p *ngIf="this.response" class="text-success">Usuario creado correctamente</p>
