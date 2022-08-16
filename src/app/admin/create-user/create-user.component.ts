@@ -99,7 +99,7 @@ export class CreateUserComponent implements OnInit {
       secondLastName: ['', [Validators.required]],
       role: ['', [Validators.required]],
       rut: ['', [Validators.required, MyValidators.isRutValid]],
-      grade: ['', []],
+      grade: ['', [this.form.get('role')?.value === '5' ? Validators.required : '']],
     });
   }
 

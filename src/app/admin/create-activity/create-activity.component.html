@@ -1,0 +1,47 @@
+<div class="user-form-container">
+  <div class="back-button example-button-container">
+    <button mat-raised-button color="primary" mat-dialog-close>
+      <mat-icon>arrow_back_ios</mat-icon>
+      Volver
+    </button>
+  </div>
+  <form [formGroup]="form">
+    <mat-card class="form-card">
+      <mat-card-header class="form-header">
+        <mat-card-title>Agregar Actividad</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <mat-label>Curso</mat-label>
+              <select matNativeControl formControlName="grade">
+                <option value="" selected>Seleccione el curso</option>
+                <option value={{grade.id}} *ngFor="let grade of grades; index as i">
+                  {{grade.year + grade.letter}}</option>
+              </select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row" *ngIf="this.form.get('grade')?.value !== ''">
+          <div class="col-xs">
+            <mat-form-field>
+              <mat-label>Tipo de pregunta</mat-label>
+              <select matNativeControl formControlName="questionTypes">
+                <option value="" selected>Seleccione el tipo de pregunta</option>
+                <option value={{questionT.id}} *ngFor="let questionT of questionTypes; index as i">
+                  {{questionT.description}}</option>
+              </select>
+            </mat-form-field>
+          </div>
+        </div>
+        <span class="text-danger" *ngIf="this.courseExist">
+          Ya existe el curso
+        </span>
+      </mat-card-content>
+      <mat-card-actions class="form-button">
+        <p *ngIf="this.response" class="text-success">Usuario creado correctamente</p>
+        <button [disabled]="!this.form.valid" mat-raised-button type="submit">Ingresar</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>

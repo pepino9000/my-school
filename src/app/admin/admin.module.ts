@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { AllStudentsComponent } from './all-students/all-students.component';
 import { CreateCoursesComponent } from './create-courses/create-courses.component';
+import { CreateActivityComponent } from './create-activity/create-activity.component';
 
 
 
@@ -15,7 +16,8 @@ import { CreateCoursesComponent } from './create-courses/create-courses.componen
     CreateUserComponent,
     EditUserComponent,
     AllStudentsComponent,
-    CreateCoursesComponent
+    CreateCoursesComponent,
+    CreateActivityComponent
   ],
   imports: [
     CommonModule,
