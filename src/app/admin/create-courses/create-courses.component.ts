@@ -109,6 +109,7 @@ export class CreateCoursesComponent implements OnInit {
         this.gradeService.createGrade(
           data
         ).subscribe((grade) => {
+          this.response = true;
         });
       });
   }

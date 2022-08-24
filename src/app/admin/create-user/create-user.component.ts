@@ -41,16 +41,15 @@ export class CreateUserComponent implements OnInit {
     this.form.get("rut")?.valueChanges.pipe(distinctUntilChanged()).subscribe(selectedValue => {
       if (selectedValue !== this.rut) {
         // Despejar Puntos y Guión
-        let valor = selectedValue.replace('.', '').replace('-', '');
+        let valor = selectedValue.replaceAll('.', '').trim().replaceAll('-', '');
         // Aislar Cuerpo y Dígito Verificador
-        let cuerpo = valor.slice(0, -1);
-        let dv = valor.slice(-1).toUpperCase();
+        let cuerpo = valor.slice(0, -1).replaceAll('-', '');
+        let dv = valor.slice(-1).toUpperCase().replaceAll('-', '');
         // Formatear RUN
-        if (selectedValue.replace('-', '').replace(/\D/g, '').length > 1) {
+        if (selectedValue.replaceAll('-', '').replace(/\D/g, '').length > 1) {
           let formattedValue = cuerpo.replaceAll('-', '') + '-' + dv.replaceAll('-', '');
           this.form.controls['rut'].setValue(formattedValue);
         } else {
-          console.log('else')
           this.form.controls['rut'].setValue(dv);
         }
       }
@@ -99,7 +98,8 @@ export class CreateUserComponent implements OnInit {
       secondLastName: ['', [Validators.required]],
       role: ['', [Validators.required]],
       rut: ['', [Validators.required, MyValidators.isRutValid]],
-      grade: ['', [this.form.get('role')?.value === '5' ? Validators.required : '']],
+      grade: ['',],
+      phone: ['',]
     });
   }
 

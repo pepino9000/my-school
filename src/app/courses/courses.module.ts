@@ -6,14 +6,14 @@ import { CoursesRoutingModule } from './courses.routing-module';
 import { SeeCoursesComponent } from './see-courses/see-courses.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StudentModalComponent } from './student-modal/student-modal.component';
-
-
+import { SeeActivitiesComponent } from './see-activities/see-activities.component';
 
 @NgModule({
   declarations: [
     CoursesComponent,
     SeeCoursesComponent,
-    StudentModalComponent
+    StudentModalComponent,
+    SeeActivitiesComponent,
   ],
   imports: [
     CommonModule,

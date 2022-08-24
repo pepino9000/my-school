@@ -9,7 +9,8 @@ import { User } from 'src/app/layout/layout.component';
 })
 export class HomeComponent implements OnInit {
   user: User | undefined;
-
+  id = window.localStorage.getItem('user');
+  userId!: number;
   constructor (
     private router: Router,
   ) {}

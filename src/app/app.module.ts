@@ -13,11 +13,13 @@ import { HomeModule } from './home/home.module';
 import { CoursesModule } from './courses/courses.module';
 import { LayoutComponent } from './layout/layout.component';
 import { MaterialModule } from './material/material.module';
+import { SeeActivitiesComponent } from './see-activities/see-activities.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
+    SeeActivitiesComponent,
   ],
   imports: [
     BrowserModule,

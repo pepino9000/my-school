@@ -109,7 +109,8 @@ export class EditUserComponent implements OnInit {
       lastName: ['', [Validators.required]],
       secondLastName: ['', [Validators.required]],
       rut: ['', [Validators.required, MyValidators.isRutValid]],
-      grade: ['']
+      grade: [''],
+      phone: ['']
     });
   }
   async getAllGrades() {

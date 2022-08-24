@@ -1,10 +1,10 @@
 <div class="user-form-container">
-<div class="back-button example-button-container">
-  <button mat-raised-button color="primary" routerLink="/home">
-    <mat-icon>arrow_back_ios</mat-icon>
-    Volver
-  </button>
-</div>
+  <div class="back-button example-button-container">
+    <button mat-raised-button color="primary" routerLink="/home">
+      <mat-icon>arrow_back_ios</mat-icon>
+      Volver
+    </button>
+  </div>
   <form [formGroup]="form" (ngSubmit)="create($event)">
     <mat-card class="form-card">
       <mat-card-header class="form-header">
@@ -61,13 +61,21 @@
           <mat-label>Curso (opcional)</mat-label>
           <select matNativeControl formControlName="grade">
             <option value="" selected>Seleccione el curso</option>
-            <option value={{grade.id}} *ngFor="let grade of grades; index as i">{{grade.year + ' ' + grade.letter}}</option>
+            <option value={{grade.id}} *ngFor="let grade of grades; index as i">{{grade.year + ' ' + grade.letter}}
+            </option>
           </select>
         </mat-form-field>
         <div class="row">
-            <div class="col-xs">
-              <mat-form-field>
+          <div class="col-xs">
+            <mat-form-field>
               <input placeholder="rut" formControlName="rut" matInput type="rut">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="phone" formControlName="phone" matInput type="phone">
             </mat-form-field>
           </div>
         </div>

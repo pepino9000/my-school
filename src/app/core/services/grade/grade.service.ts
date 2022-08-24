@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Activity } from 'src/app/admin/activity/activity.component';
 import { Grades } from 'src/app/courses/courses/courses.component';
 import { environment } from 'src/environments/environment';
 
@@ -31,5 +32,17 @@ export class GradeService {
   }
   createGrade(data: Grades) {
     return this.http.post<Grades>(`${environment.url_api}/api/v1/grade`, data);
+  }
+  createActivity(data: any) {
+    return this.http.post(`${environment.url_api}/api/v1/activity`, data);
+  }
+  createActivitySelectionQ(data: any) {
+    return this.http.post(`${environment.url_api}/api/v1/selectionQ`, data);
+  }
+  getActivitiesByStudent(id: number) {
+    return this.http.get(`${environment.url_api}/api/v1/grade/getActivityByStudent/${id}`,);
+  }
+  getActivity(id: number) {
+    return this.http.get<Activity[]>(`${environment.url_api}/api/v1/activity/getActivityWithQuestions/${id}`,);
   }
 }

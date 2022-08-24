@@ -1,0 +1,20 @@
+<div class="row">
+  <div *ngFor="let activity of activities; index as i" class="col-4 my-4 ">
+    <mat-card class="text-center">
+      <mat-card-title>Actividad {{i + 1}}</mat-card-title>
+      <mat-icon>school</mat-icon>
+      <mat-card-content style="place-content: center;">
+        <p>Estado:
+          <span *ngIf="this.activity.open" class="text-success"><b>Abierto</b></span>
+          <span *ngIf="!this.activity.open" class="text-error"><b>Cerrado</b></span>
+        </p>
+        <p>Fecha de cierre:
+          {{this.activity.closeDateAt | date}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="more(activity.id, activity.questionTypeId)" mat-button>VER</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -16,13 +16,23 @@
       <button mat-menu-item routerLink="/courses">Ver cursos</button>
     </mat-menu>
     <div class="example-button-container">
-      <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+      <button mat-mini-fab color="primary" routerLink="/admin/create-user" aria-label="Example icon button with a menu icon">
         <mat-icon>face</mat-icon>
       </button>
     </div>
     <button mat-button [matMenuTriggerFor]="alumnos">Alumnos</button>
     <mat-menu #alumnos="matMenu">
       <button mat-menu-item routerLink="/admin/create-user">Agregar Alumnos</button>
+    </mat-menu>
+    <div class="example-button-container">
+      <button mat-mini-fab color="primary" routerLink="/admin/create-activity"
+        aria-label="Example icon button with a menu icon">
+        <mat-icon>assignment_turned_in</mat-icon>
+      </button>
+    </div>
+    <button mat-button [matMenuTriggerFor]="activity">Actividad</button>
+    <mat-menu #activity="matMenu">
+      <button mat-menu-item routerLink="/admin/create-activity">Agregar Actividad</button>
     </mat-menu>
   </mat-drawer>
   <mat-drawer-content>

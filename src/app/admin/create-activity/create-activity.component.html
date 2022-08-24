@@ -1,6 +1,6 @@
 <div class="user-form-container">
   <div class="back-button example-button-container">
-    <button mat-raised-button color="primary" mat-dialog-close>
+    <button mat-raised-button color="primary" mat-dialog-close routerLink="/home">
       <mat-icon>arrow_back_ios</mat-icon>
       Volver
     </button>
@@ -23,7 +23,7 @@
             </mat-form-field>
           </div>
         </div>
-        <div class="row" *ngIf="this.form.get('grade')?.value !== ''">
+        <div class="row my-2" *ngIf="this.form.get('grade')?.value !== ''">
           <div class="col-xs">
             <mat-form-field>
               <mat-label>Tipo de pregunta</mat-label>
@@ -35,15 +35,78 @@
             </mat-form-field>
           </div>
         </div>
-        <div class="example-button-container">
-          <button mat-raised-button color="primary">
-          Agregar pregunta +
+        <div class="row my-1" *ngIf="this.form.get('questionTypes')?.value !== ''">
+          <div class="col-xs">
+            <mat-form-field appearance="fill" style="width: 186px;">
+              <mat-label>Fecha</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="datePicker">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="example-button-container my-3">
+          <button mat-raised-button color="primary" (click)="addPregunta()">
+            Agregar pregunta +
           </button>
         </div>
-      </mat-card-content>
-      <mat-card-actions class="form-button">
-        <p *ngIf="this.response" class="text-success">Usuario creado correctamente</p>
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+          <div formArrayName="preguntas">
+            <div *ngFor="let pregunta of preguntas().controls; let i=index" [formGroupName]="i"
+              style="height:400px; margin-top:10px">
+              <div>
+                Pregunta {{i + 1}}
+                <div class="row">
+                  <div class="col-xs">
+                    <mat-form-field>
+                      <input placeholder="Pregunta" formControlName="pregunta" matInput type="pregunta">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs">
+                    <mat-form-field>
+                      <input placeholder="A" formControlName="resp1" matInput type="resp1">
+                    </mat-form-field>
+                    <input type="radio" id="html" formControlName="isCorrect" value="A">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs">
+                    <mat-form-field>
+                      <input placeholder="B" formControlName="resp2" matInput type="resp2">
+                    </mat-form-field>
+                    <input type="radio" id="html" formControlName="isCorrect" value="B">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs">
+                    <mat-form-field>
+                      <input placeholder="C" formControlName="resp3" matInput type="resp3">
+                    </mat-form-field>
+                    <input type="radio" id="html" formControlName="isCorrect" value="C">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs">
+                    <mat-form-field>
+                      <input placeholder="D" formControlName="resp4" matInput type="resp4">
+                    </mat-form-field>
+                    <input type="radio" id="html" formControlName="isCorrect" value="D">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button (click)="removepreguntas(i)" class="btn btn-danger">Remove</button>
+              </div>
+            </div>
+            <mat-card-actions class="form-button">
+        <p *ngIf="this.response" class="text-success">Actividad creada correctamente</p>
         <button [disabled]="!this.form.valid" mat-raised-button type="submit">Ingresar</button>
       </mat-card-actions>
+          </div>
+          </form>
+          </mat-card-content>
     </mat-card>
   </form>
