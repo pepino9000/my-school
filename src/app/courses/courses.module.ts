@@ -7,6 +7,10 @@ import { SeeCoursesComponent } from './see-courses/see-courses.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StudentModalComponent } from './student-modal/student-modal.component';
 import { SeeActivitiesComponent } from './see-activities/see-activities.component';
+import { ActividadesRespondidasComponent } from './actividades-respondidas/actividades-respondidas.component';
+import { StudentActivitiesComponent } from './student-activities/student-activities.component';
+import { HomeComponent } from '../home/home/home.component';
+import { ActivityModalComponent } from './activities-modal/activity-modal.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +18,9 @@ import { SeeActivitiesComponent } from './see-activities/see-activities.componen
     SeeCoursesComponent,
     StudentModalComponent,
     SeeActivitiesComponent,
+    ActividadesRespondidasComponent,
+    StudentActivitiesComponent,
+    ActivityModalComponent
   ],
   imports: [
     CommonModule,

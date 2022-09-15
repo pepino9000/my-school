@@ -1,0 +1,38 @@
+<div class="user-form-container">
+  <div class="back-button example-button-container">
+    <button mat-raised-button color="primary" mat-button mat-dialog-close>
+      <mat-icon>arrow_back_ios</mat-icon>
+      Cerrar
+    </button>
+  </div>
+  <br>
+  <mat-card class="example-card" *ngIf="this.data">
+    <mat-card-header>
+      <mat-card-title>
+        {{
+        this.data.name
+        }}
+      </mat-card-title>
+      <mat-card-subtitle>Estudiante</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content *ngIf="this.activity">
+      <h4>Resultados Actividad</h4>
+      <div *ngFor="let act of this.activity; let i=index">
+        <b> {{i+1}}- {{act[0].question}}</b>
+      <div *ngFor="let activityq of act; let y=index" [class]="activityq.is_correct ? 'bold': activityq.answered ? 'text-danger' : ''">
+          {{y === 0 ? 'A)' : ''}}
+          {{y === 1 ? 'B)' : ''}}
+          {{y === 2 ? 'C)' : ''}}
+          {{y === 3 ? 'D)' : ''}}
+          {{activityq.answer}}
+          <b *ngIf="activityq.answered && !activityq.is_correct" class="text-danger">X</b>
+          <b *ngIf="activityq.answered && activityq.is_correct" class="text-success">✓</b>
+        </div>
+        <br/>
+      </div>
+      <b>Correctas: {{this.correctAnswers}}</b>
+      <br>
+      <b>Nota: {{(this.puntajeTotal * correctAnswers) / 10 | number : '1.1-1'}}</b>
+    </mat-card-content>
+  </mat-card>

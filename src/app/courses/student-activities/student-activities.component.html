@@ -1,0 +1,55 @@
+<div>
+  <div class="back-button example-button-container">
+    <button mat-raised-button color="primary" routerLink="/courses">
+      <mat-icon>arrow_back_ios</mat-icon>
+      Volver
+    </button>
+  </div>
+  <table mat-table [dataSource]="this.students" class="mat-elevation-z8 mt-5">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let student">{{ student.id }}</td>
+    </ng-container>
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let student"> {{student.name}} {{student.secondName}} {{student.lastName}}
+        {{student.secondLastName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="rut">
+      <th mat-header-cell *matHeaderCellDef> Rut </th>
+      <td mat-cell *matCellDef="let student"> {{student.rut}} </td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Correo </th>
+      <td mat-cell *matCellDef="let student"> {{student.email}} </td>
+    </ng-container>
+    <ng-container matColumnDef="activity-status">
+      <th mat-header-cell *matHeaderCellDef> Nota </th>
+      <td mat-cell *matCellDef="let student" >
+        <span *ngIf="student.answered">{{student.score}}</span>
+        <span *ngIf="!student.answered" class="text-warning">P</span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="answers">
+      <th mat-header-cell *matHeaderCellDef> Respuestas </th>
+      <td mat-cell *matCellDef="let student" >
+        <button mat-raised-button color="primary" *ngIf="student.answered" (click)="openDialog(student.id, student.name + ' ' + student.secondName + ' ' + student.lastName)">
+          Ver
+        </button>
+        <span *ngIf="!student.answered" class="text-warning">P</span>
+      </td>
+    </ng-container>
+    <!-- <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let student">
+        <button class="title" (click)="openStudent(student.id)" mat-button>Ver</button>
+        <button class="title" (click)="openDialog(student.id)" mat-button>Editar</button>
+      </td>
+    </ng-container> -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

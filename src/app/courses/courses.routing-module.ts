@@ -1,8 +1,10 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from '@angular/router';
+import { ActividadesRespondidasComponent } from "./actividades-respondidas/actividades-respondidas.component";
 import { CoursesComponent } from "./courses/courses.component";
 import { SeeActivitiesComponent } from "./see-activities/see-activities.component";
 import { SeeCoursesComponent } from "./see-courses/see-courses.component";
+import { StudentActivitiesComponent } from "./student-activities/student-activities.component";
 
 const routes: Routes = [
     {
@@ -16,6 +18,14 @@ const routes: Routes = [
     {
         path: 'see-activities',
         component: SeeActivitiesComponent,
+    },
+    {
+      path: 'activities/:id',
+      component: ActividadesRespondidasComponent,
+    },
+    {
+      path: 'activities/students-activities/:id',
+      component: StudentActivitiesComponent,
     },
 ];
 @NgModule({

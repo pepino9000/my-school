@@ -42,7 +42,19 @@ export class GradeService {
   getActivitiesByStudent(id: number) {
     return this.http.get(`${environment.url_api}/api/v1/grade/getActivityByStudent/${id}`,);
   }
-  getActivity(id: number) {
-    return this.http.get<Activity[]>(`${environment.url_api}/api/v1/activity/getActivityWithQuestions/${id}`,);
+  getActivitiesWithStudent(id: number) {
+    return this.http.get(`${environment.url_api}/api/v1/grade/getActivityByGradeWithStudents/${id}`,);
+  }
+  getActivityByStudent(studentId: number, activityId: number){
+    return this.http.get(`${environment.url_api}/api/v1/grade/getActivityByStudent/${studentId}/${activityId}`)
+  }
+  getActivitiesByGrade(id: number) {
+    return this.http.get(`${environment.url_api}/api/v1/grade/getActivityByGrade/${id}`,);
+  }
+  getActivity(id: number, userId: number) {
+    return this.http.get<Activity[]>(`${environment.url_api}/api/v1/activity/getActivityWithQuestions/${id}/${userId}`,);
+  }
+  createActivitySelectionAnswers(data: any) {
+    return this.http.post(`${environment.url_api}/api/v1/activityAnswer`, data);
   }
 }

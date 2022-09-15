@@ -17,7 +17,8 @@
               Docente: {{grade.name + ' ' +grade.lastName}}
             </mat-card-content>
       <mat-card-actions>
-        <button (click)="more(grade.listId!)" mat-button>VER</button>
+        <button (click)="more(grade.listId!)" mat-button>Ver alumnos</button>
+        <button (click)="activities(grade.id!)" mat-button>Ver actividades</button>
       </mat-card-actions>
     </mat-card>
   </div>

@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.back-button{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.mat-dialog-container{
+  background: linear-gradient(90deg, #226bc3 0%, #2dbdfd 100%);
+}
+
+::ng-deep .my-custom-dialog-class {
+  mat-dialog-container {
+    background: linear-gradient(90deg, #226bc3 0%, #2dbdfd 100%);
+  }
+}
+.answered-question-correct{
+  background: rgb(47, 255, 99);
+  color: white!important;
+}
+.answered-question{
+  background: #ff0080;
+  color: white!important;
+}
+.bold{
+  font-weight: 900;
+  color: rgb(84, 168, 105);
+}

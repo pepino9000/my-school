@@ -52,7 +52,9 @@ export class CoursesComponent implements OnInit {
   async more(id: number) {
     this.router.navigate([`/courses/students/${id}`]);
   }
-
+  async activities(id: number) {
+    this.router.navigate([`/courses/activities/${id}`]);
+  }
   openDialog(): void {
     let dialogRef = this.dialog.open(CreateCoursesComponent, {
       width: '313px',
